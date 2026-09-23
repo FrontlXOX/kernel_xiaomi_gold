@@ -72,7 +72,7 @@ CONFIG_MTK_VIDEO_LM3644=m
 CONFIG_MTK_VIDEO_SY7806=m
 CONFIG_MTK_VIDEO_KTD2687=m
 CONFIG_MTK_IMGSENSOR=m
-CONFIG_CUSTOM_KERNEL_IMGSENSOR="s5kjd1_mipi_raw imx519_mipi_raw imx586_mipi_raw imx576_mipi_raw imx481_mipi_raw s5k3m5sx_mipi_raw ov48b_mipi_raw imx766_mipi_raw s5k3p9sp_mipi_raw imx766dual_mipi_raw imx766o_mipi_raw imx709o_mipi_raw imx766dualo_mipi_raw s5k3m5sxo_mipi_raw imx499_mipi_raw s5k4h7alpha_mipi_raw gc02m1_mipi_raw imx582_mipi_raw imx596_mipi_raw"
+CONFIG_CUSTOM_KERNEL_IMGSENSOR="s5kjn1sunny_mipi_raw ov50c40ofilm_mipi_raw ov16a1qofilm_mipi_raw ov16a1qqtech_mipi_raw imx355ofilm_mipi_raw imx355sunny_mipi_raw"
 CONFIG_MTK_IMGSENSOR_PLATFORM_SUPPORT=y
 CONFIG_MTK_IMGSENSOR_MT6853=m
 CONFIG_MTK_IMGSENSOR_MT6893=m
@@ -544,3 +544,10 @@ CONFIG_INPUT_TOUCHSCREEN=y
 # everpal-510: FPC1542 fingerprint (ported driver)
 CONFIG_MTK_FINGERPRINT_SUPPORT=y
 CONFIG_INPUT_FINGERPRINT_FPC1542=y
+
+# everpal-510: camera PMIC rails
+CONFIG_REGULATOR_WL2866D=y
+
+# everpal-510: regulator framework (donor never sets CONFIG_REGULATOR,
+# silently dropping MT6360/WL2866D regulators)
+CONFIG_REGULATOR=y

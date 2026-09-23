@@ -346,7 +346,7 @@
 	status = "okay";
 };
 /* GPS GPIO standardization end */
-#include "mediatek/cust_mt6833_camera.dtsi"
+#include "mediatek/cust_mt6833_everpal_camera.dtsi" /* everpal sensors (ported drivers) */
 #include <everpal-510/cust.dtsi> /* STUB, see everpal-510/cust.dtsi */
 
 

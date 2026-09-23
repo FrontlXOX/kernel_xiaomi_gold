@@ -399,6 +399,19 @@
 #define OV16A1Q_AAC_FRONT_SENSOR_ID                 0x1641
 #define SENSOR_DRVNAME_OV16A1Q_AAC_FRONT_MIPI_RAW    "ov16a1q_aac_front_mipi_raw"
 #define OV16A1Q_SUNNY_FRONT_SENSOR_ID               0x1642
+/* everpal port: IDs + names from 4.14 kd_imgsensor.h (verified values) */
+#define IMX355OFILM_SENSOR_ID                   0x355
+#define SENSOR_DRVNAME_IMX355OFILM_MIPI_RAW     "imx355ofilm_mipi_raw"
+#define IMX355SUNNY_SENSOR_ID                   0x356
+#define SENSOR_DRVNAME_IMX355SUNNY_MIPI_RAW     "imx355sunny_mipi_raw"
+#define S5KJN1SUNNY_SENSOR_ID                   0x38e1
+#define SENSOR_DRVNAME_S5KJN1SUNNY_MIPI_RAW     "s5kjn1sunny_mipi_raw"
+#define OV50C40OFILM_SENSOR_ID                  0x565043
+#define SENSOR_DRVNAME_OV50C40OFILM_MIPI_RAW    "ov50c40ofilm_mipi_raw"
+#define OV16A1QOFILM_SENSOR_ID                  0x1641
+#define SENSOR_DRVNAME_OV16A1QOFILM_MIPI_RAW    "ov16a1qofilm_mipi_raw"
+#define OV16A1QQTECH_SENSOR_ID                  0x1642
+#define SENSOR_DRVNAME_OV16A1QQTECH_MIPI_RAW    "ov16a1qqtech_mipi_raw"
 #define SENSOR_DRVNAME_OV16A1Q_SUNNY_FRONT_MIPI_RAW  "ov16a1q_sunny_front_mipi_raw"
 #define OV08D10_AAC_ULTRA_SENSOR_ID           0x56084700
 #define SENSOR_DRVNAME_OV08D10_AAC_ULTRA_MIPI_RAW      "ov08d10_aac_ultra_mipi_raw"

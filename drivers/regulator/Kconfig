@@ -1478,4 +1478,10 @@ config REGULATOR_FAN53870
 	  Set Y or M to select this feature for specific fan53870,
 	  and set N to disable.
 
+config REGULATOR_WL2866D
+	bool "ON Semi wl2866d camera regulator (everpal port from 4.14)"
+	depends on I2C
+	help
+	  Camera power rails for everpal sensors (DVDD/AVDD via wl2866d).
+
 endif

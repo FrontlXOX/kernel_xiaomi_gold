@@ -1,0 +1,8 @@
+/* SPDX-License-Identifier: GPL-2.0 */
+/*
+ * everpal-510 board vendor overlay STUB (empty-but-valid).
+ * Origin: k6833pv1_64_k510.dts includes <k6833pv1_64_k510/cust.dtsi>,
+ * which is an external vendor file absent from this tree — referencing it
+ * breaks the build. This stub keeps everpal-510.dts self-contained until
+ * real everpal vendor overlay values are known (later port item).
+ */

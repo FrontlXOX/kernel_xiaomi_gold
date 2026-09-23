@@ -540,3 +540,7 @@ CONFIG_ONEWIRE_GPIO=y
 # everpal-510: enable touchscreen input class (donor never sets it,
 # silently dropping the MTK_TOUCH string and NT36672C driver)
 CONFIG_INPUT_TOUCHSCREEN=y
+
+# everpal-510: FPC1542 fingerprint (ported driver)
+CONFIG_MTK_FINGERPRINT_SUPPORT=y
+CONFIG_INPUT_FINGERPRINT_FPC1542=y

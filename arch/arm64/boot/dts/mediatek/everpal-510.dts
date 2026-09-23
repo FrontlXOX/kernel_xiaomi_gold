@@ -405,4 +405,78 @@
 	status = "okay";
 };
 
+
+/* everpal NFC (adapted from 4.14 evergo.dts i2c3/st21nfc@8):
+ * 5.10 driver (drivers/misc/mediatek/nfc/st21nfc) binds "st,st21nfc"
+ * with irq-gpios/reset-gpios + client->irq — NOT 4.14's
+ * "mediatek,nfc-gpio-v2" bare-number style. Same bus (i2c3@400kHz),
+ * same address (0x08), same GPIOs (RST pio92, IRQ pio5 edge-rising). */
+&i2c3 {
+	clock-frequency = <400000>;
+	mediatek,use-open-drain;
+	status = "okay";
+
+	st21nfc@8 {
+		compatible = "st,st21nfc";
+		reg = <0x08>;
+		interrupt-parent = <&pio>;
+		interrupts = <5 IRQ_TYPE_EDGE_RISING>;
+		irq-gpios = <&pio 5 0>;
+		reset-gpios = <&pio 92 0>;
+		status = "okay";
+	};
+};
+
+
+/* everpal fingerprint (ported from 4.14 evergo.dts):
+ * FPC1542 on spi5 (10MHz, RST pio17, wakeup, netlink 31, vfp-supply)
+ * + Goodix-compat EINT on pio18 (dual footprint, FPC populated).
+ * Driver: drivers/input/fingerprint/fpc1542/mtk_spi.c (ported). */
+&pio {
+	fpsensor_fpc_rst_low: fpsensor_fpc_rst_low {
+		pins_cmd_dat {
+			pinmux = <PINMUX_GPIO17__FUNC_GPIO17>;
+			slew-rate = <1>;
+			output-low;
+		};
+	};
+
+	fpsensor_fpc_rst_high: fpsensor_fpc_rst_high {
+		pins_cmd_dat {
+			pinmux = <PINMUX_GPIO17__FUNC_GPIO17>;
+			slew-rate = <1>;
+			output-high;
+		};
+	};
+};
+
+&spi5 {
+	fpc_spi@0 {
+		compatible = "fpc,fpc_spi";
+		reg = <0>;
+		fpc,enable-wakeup;
+		spi-max-frequency = <10000000>;
+		netlink-event = <31>;
+		vfp-supply = <&mt_pmic_vfp_ldo_reg>;
+		pinctrl-names = "fpsensor_fpc_rst_low", "fpsensor_fpc_rst_high";
+		pinctrl-0 = <&fpsensor_fpc_rst_low>;
+		pinctrl-1 = <&fpsensor_fpc_rst_high>;
+		status = "okay";
+	};
+};
+
+/* 5.10 base lacks the fpsensor_fp_eint stub that 4.14 mt6833.dts provides.
+ * Added as a child of root via &{/} override (explicit fragment@N blocks
+ * are rejected by the toolchain dtc). The driver finds it by compatible
+ * anywhere in the tree. */
+&{/} {
+	fpsensor_fp_eint: fpsensor_fp_eint {
+		compatible = "mediatek,fpsensor_fp_eint";
+		interrupt-parent = <&pio>;
+		interrupts = <18 IRQ_TYPE_EDGE_RISING 18 0>;
+		int-gpios = <&pio 18 0>;
+		status = "okay";
+	};
+};
+
 /*End of this file, DO NOT ADD ANYTHING HERE*/

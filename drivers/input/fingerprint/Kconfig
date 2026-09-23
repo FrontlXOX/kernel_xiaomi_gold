@@ -9,4 +9,5 @@ config MTK_FINGERPRINT_SUPPORT
 	fingerprint  device.
 source "drivers/input/fingerprint/fpc/Kconfig"
 source "drivers/input/fingerprint/goodix/Kconfig"
+source "drivers/input/fingerprint/fpc1542/Kconfig"
 endmenu

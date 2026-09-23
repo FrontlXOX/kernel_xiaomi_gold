@@ -15,3 +15,5 @@ dtb-$(CONFIG_ARCH_MEDIATEK) += mt8183-evb.dtb
 dtb-$(CONFIG_ARCH_MEDIATEK) += mt8183-kukui-krane-sku176.dtb
 dtb-$(CONFIG_ARCH_MEDIATEK) += mt8516-pumpkin.dtb
 dtb-$(CONFIG_ARCH_MEDIATEK) += mt6833.dtb
+# everpal-510 board overlay (Phase-1 shell; /plugin/ style like k6833pv1_64_k510)
+dtb-$(CONFIG_ARCH_MEDIATEK) += everpal-510.dtb

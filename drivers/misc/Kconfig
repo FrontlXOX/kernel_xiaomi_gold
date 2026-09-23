@@ -501,4 +501,5 @@ source "drivers/misc/uacce/Kconfig"
 source "drivers/misc/mi-memory/Kconfig"
 #N17 code for HQ-290612 by gaoshilin at 20230412 end
 source "drivers/misc/hqsysfs/Kconfig"
+source "drivers/misc/maxim/Kconfig"
 endmenu

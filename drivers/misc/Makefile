@@ -65,3 +65,4 @@ obj-$(CONFIG_MI_MEMORY_SYSFS)	+= mi-memory/
 #N17 code for HQ-292544 by zhengrui at 20230428 start
 obj-y				+= hqsysfs/
 #N17 code for HQ-292544 by zhengrui at 20230428 end
+obj-$(CONFIG_BATT_VERIFY_BY_DS28E16) += maxim/

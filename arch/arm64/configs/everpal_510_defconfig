@@ -532,3 +532,11 @@ CONFIG_SND_SOC=y
 CONFIG_DMABUF_HEAPS=y
 CONFIG_DMABUF_HEAPS_DEFERRED_FREE=y
 CONFIG_DMABUF_HEAPS_PAGE_POOL=y
+
+# everpal-510: battery auth (DS28E16 + onewire bit-bang, ported from 4.14 drivers/misc/maxim/)
+CONFIG_BATT_VERIFY_BY_DS28E16=y
+CONFIG_ONEWIRE_GPIO=y
+
+# everpal-510: enable touchscreen input class (donor never sets it,
+# silently dropping the MTK_TOUCH string and NT36672C driver)
+CONFIG_INPUT_TOUCHSCREEN=y
